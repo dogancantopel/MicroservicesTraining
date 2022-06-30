@@ -1,8 +1,10 @@
 using FreeCourse.Services.Catalog.Services;
 using FreeCourse.Services.Catalog.Settings;
+using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Mvc.Authorization;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
@@ -32,9 +34,11 @@ namespace FreeCourse.Services.Catalog
             services.AddScoped<ICourseService, CourseService>();
 
             services.AddAutoMapper(typeof(Startup));
-            services.AddControllers();
+            //bütün actionlar token ile çalýþýr
+            services.AddControllers(opts=>opts.Filters.Add(new AuthorizeFilter()));
 
             services.Configure<DatabaseSettings>(Configuration.GetSection("DatabaseSettings"));
+            //Constructorda bunu gördüðünde deðeri direkt geçer
             services.AddSingleton<IDatabaseSettings>(sp =>
             {
                 return sp.GetRequiredService<IOptions<DatabaseSettings>>().Value;
@@ -44,6 +48,15 @@ namespace FreeCourse.Services.Catalog
             services.AddSwaggerGen(c =>
             {
                 c.SwaggerDoc("v1", new OpenApiInfo { Title = "FreeCourse.Services.Catalog", Version = "v1" });
+            });
+
+            //bu taným ile apinin identity serverdaki tanýmla eþleþmesi saðlanýr
+            services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme).AddJwtBearer(options =>
+            {
+                options.Authority = Configuration["IdentityServerUrl"];
+                options.Audience = "resource_Catalog";
+                options.RequireHttpsMetadata = false;
+
             });
         }
 
@@ -60,6 +73,8 @@ namespace FreeCourse.Services.Catalog
             app.UseRouting();
 
             app.UseAuthorization();
+
+            app.UseAuthentication();
 
             app.UseEndpoints(endpoints =>
             {

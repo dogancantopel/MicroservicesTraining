@@ -1,13 +1,13 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio Version 16
-VisualStudioVersion = 16.0.30717.126
+# Visual Studio Version 17
+VisualStudioVersion = 17.2.32516.85
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Services", "Services", "{A8041E16-706B-473B-BD5C-77D685412A0B}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Catalog", "Catalog", "{36BF2175-228E-404A-B431-DB7A8050C44E}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FreeCourse.Services.Catalog", "Services\Catalog\FreeCourse.Services.Catalog\FreeCourse.Services.Catalog.csproj", "{DE81C086-6D17-48D7-8166-C5E014B818B1}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FreeCourse.Services.Catalog", "Services\Catalog\FreeCourse.Services.Catalog\FreeCourse.Services.Catalog.csproj", "{DE81C086-6D17-48D7-8166-C5E014B818B1}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{36CD81E5-FE30-470E-B556-A22AE0286C8E}"
 	ProjectSection(SolutionItems) = preProject
@@ -16,7 +16,11 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution 
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Shared", "Shared", "{93487A12-0851-4F04-9D5D-4CFCDA0ECBD0}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FreeCources.Shared", "Shared\FreeCources.Shared\FreeCources.Shared.csproj", "{85D56049-4200-4D0D-8B0C-DFD8EE62F078}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FreeCources.Shared", "Shared\FreeCources.Shared\FreeCources.Shared.csproj", "{85D56049-4200-4D0D-8B0C-DFD8EE62F078}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "IdentityServer", "IdentityServer", "{09DFDB46-4B97-443C-8A91-49182C3825E8}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FreeCourse.IdentityServer", "IdentityServer\FreeCourse.IdentityServer\FreeCourse.IdentityServer.csproj", "{CEA5E0B2-88A5-4C91-AE57-3C495C200B34}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -32,6 +36,10 @@ Global
 		{85D56049-4200-4D0D-8B0C-DFD8EE62F078}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{85D56049-4200-4D0D-8B0C-DFD8EE62F078}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{85D56049-4200-4D0D-8B0C-DFD8EE62F078}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CEA5E0B2-88A5-4C91-AE57-3C495C200B34}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CEA5E0B2-88A5-4C91-AE57-3C495C200B34}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CEA5E0B2-88A5-4C91-AE57-3C495C200B34}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CEA5E0B2-88A5-4C91-AE57-3C495C200B34}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -40,6 +48,7 @@ Global
 		{36BF2175-228E-404A-B431-DB7A8050C44E} = {A8041E16-706B-473B-BD5C-77D685412A0B}
 		{DE81C086-6D17-48D7-8166-C5E014B818B1} = {36BF2175-228E-404A-B431-DB7A8050C44E}
 		{85D56049-4200-4D0D-8B0C-DFD8EE62F078} = {93487A12-0851-4F04-9D5D-4CFCDA0ECBD0}
+		{CEA5E0B2-88A5-4C91-AE57-3C495C200B34} = {09DFDB46-4B97-443C-8A91-49182C3825E8}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {9E499454-D849-494D-90BF-99136AD1C7DD}
