@@ -11,6 +11,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FreeCourse.Services.Catalog
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{36CD81E5-FE30-470E-B556-A22AE0286C8E}"
 	ProjectSection(SolutionItems) = preProject
+		DiscountTableSql.txt = DiscountTableSql.txt
 		Port.txt = Port.txt
 	EndProjectSection
 EndProject
@@ -21,6 +22,18 @@ EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "IdentityServer", "IdentityServer", "{09DFDB46-4B97-443C-8A91-49182C3825E8}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FreeCourse.IdentityServer", "IdentityServer\FreeCourse.IdentityServer\FreeCourse.IdentityServer.csproj", "{CEA5E0B2-88A5-4C91-AE57-3C495C200B34}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "PhotoStock", "PhotoStock", "{BF3A0514-189A-47F5-8A9D-038C7F12C1BA}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FreeCourse.Services.PhotoStock", "Services\PhotoStock\FreeCourse.Services.PhotoStock\FreeCourse.Services.PhotoStock.csproj", "{5A2646C5-8CAB-4224-A9FE-66128D92AF0E}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Basket", "Basket", "{660E665B-4E01-42CE-A480-7DCACF7655DB}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FreeCourses.Services.Basket", "Services\Basket\FreeCourses.Services.Basket\FreeCourses.Services.Basket.csproj", "{E2E87A28-FE06-481B-853B-84C83A29B205}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Discount", "Discount", "{6526A51B-FA59-489E-9F4E-AFF285FA0F9D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FreeCourse.Services.Discount", "Services\Discount\FreeCourse.Services.Discount\FreeCourse.Services.Discount.csproj", "{074E735B-3EA9-43CB-B27E-23088803F72B}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -40,6 +53,18 @@ Global
 		{CEA5E0B2-88A5-4C91-AE57-3C495C200B34}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{CEA5E0B2-88A5-4C91-AE57-3C495C200B34}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{CEA5E0B2-88A5-4C91-AE57-3C495C200B34}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5A2646C5-8CAB-4224-A9FE-66128D92AF0E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5A2646C5-8CAB-4224-A9FE-66128D92AF0E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5A2646C5-8CAB-4224-A9FE-66128D92AF0E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5A2646C5-8CAB-4224-A9FE-66128D92AF0E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E2E87A28-FE06-481B-853B-84C83A29B205}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E2E87A28-FE06-481B-853B-84C83A29B205}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E2E87A28-FE06-481B-853B-84C83A29B205}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E2E87A28-FE06-481B-853B-84C83A29B205}.Release|Any CPU.Build.0 = Release|Any CPU
+		{074E735B-3EA9-43CB-B27E-23088803F72B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{074E735B-3EA9-43CB-B27E-23088803F72B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{074E735B-3EA9-43CB-B27E-23088803F72B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{074E735B-3EA9-43CB-B27E-23088803F72B}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -49,6 +74,12 @@ Global
 		{DE81C086-6D17-48D7-8166-C5E014B818B1} = {36BF2175-228E-404A-B431-DB7A8050C44E}
 		{85D56049-4200-4D0D-8B0C-DFD8EE62F078} = {93487A12-0851-4F04-9D5D-4CFCDA0ECBD0}
 		{CEA5E0B2-88A5-4C91-AE57-3C495C200B34} = {09DFDB46-4B97-443C-8A91-49182C3825E8}
+		{BF3A0514-189A-47F5-8A9D-038C7F12C1BA} = {A8041E16-706B-473B-BD5C-77D685412A0B}
+		{5A2646C5-8CAB-4224-A9FE-66128D92AF0E} = {BF3A0514-189A-47F5-8A9D-038C7F12C1BA}
+		{660E665B-4E01-42CE-A480-7DCACF7655DB} = {A8041E16-706B-473B-BD5C-77D685412A0B}
+		{E2E87A28-FE06-481B-853B-84C83A29B205} = {660E665B-4E01-42CE-A480-7DCACF7655DB}
+		{6526A51B-FA59-489E-9F4E-AFF285FA0F9D} = {A8041E16-706B-473B-BD5C-77D685412A0B}
+		{074E735B-3EA9-43CB-B27E-23088803F72B} = {6526A51B-FA59-489E-9F4E-AFF285FA0F9D}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {9E499454-D849-494D-90BF-99136AD1C7DD}

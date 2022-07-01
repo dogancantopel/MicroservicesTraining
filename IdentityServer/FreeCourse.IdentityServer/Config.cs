@@ -13,8 +13,10 @@ namespace FreeCourse.IdentityServer
     {
         public static IEnumerable<ApiResource> ApiResources => new ApiResource[]
         {
-             new ApiResource("resource_Catalog"){Scopes={ "catalogAPI_FullPermission" } },
+             new ApiResource("resource_catalog"){Scopes={ "catalogAPI_FullPermission" } },
              new ApiResource("resource_photoStock"){Scopes={ "photoStockAPI_FullPermission" } },
+             new ApiResource("resource_basket"){Scopes={ "basketAPI_FullPermission" } },
+             new ApiResource("resource_discount"){Scopes={ "discountAPI_FullPermission" } },
              new ApiResource(IdentityServerConstants.LocalApi.ScopeName)
         };
 
@@ -35,6 +37,8 @@ namespace FreeCourse.IdentityServer
             {
                 new ApiScope("catalogAPI_FullPermission","Full Permission For Catalog API"),
                 new ApiScope("photoStockAPI_FullPermission","Full Permission For Photo Stock API"),
+                 new ApiScope("basketAPI_FullPermission","Full Permission For Basket API"),
+                  new ApiScope("discountAPI_FullPermission","Full Permission For Discount API"),
                 new ApiScope(IdentityServerConstants.LocalApi.ScopeName)
             };
 
@@ -49,9 +53,9 @@ namespace FreeCourse.IdentityServer
                     ClientSecrets={new Secret ("secret".Sha256()) },
                     AllowedGrantTypes=GrantTypes.ClientCredentials,
                     AllowedScopes={
-                        "catalogAPI_FullPermission", 
+                        "catalogAPI_FullPermission",
                         "photoStockAPI_FullPermission",
-                        IdentityServerConstants.LocalApi.ScopeName 
+                        IdentityServerConstants.LocalApi.ScopeName
                     }
                 },
 
@@ -70,7 +74,9 @@ namespace FreeCourse.IdentityServer
                         IdentityServerConstants.StandardScopes.OfflineAccess,//access token bitince refresh tokenla yeniden login etmeden token alınmasını sağlar
                         
                         IdentityServerConstants.LocalApi.ScopeName,
-                        "roles"
+                        "roles",
+                        "basketAPI_FullPermission",
+                         "discountAPI_FullPermission"
                     },
                     AccessTokenLifetime=1*60*60,//1 saat accesstoken
                     RefreshTokenExpiration=TokenExpiration.Absolute,//refresh token kalıcı değil
