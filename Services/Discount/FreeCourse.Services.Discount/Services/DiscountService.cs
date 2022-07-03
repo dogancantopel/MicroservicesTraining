@@ -1,5 +1,5 @@
 ﻿using Dapper;
-using FreeCources.Shared.Dtos;
+using FreeCourse.Shared.Dtos;
 using Microsoft.Extensions.Configuration;
 using Npgsql;
 using System.Collections.Generic;

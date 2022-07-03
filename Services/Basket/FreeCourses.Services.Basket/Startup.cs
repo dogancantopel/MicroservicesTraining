@@ -1,4 +1,4 @@
-using FreeCources.Shared.Services;
+using FreeCourse.Shared.Services;
 using FreeCourses.Services.Basket.Services;
 using FreeCourses.Services.Basket.Settings;
 using Microsoft.AspNetCore.Authentication.JwtBearer;

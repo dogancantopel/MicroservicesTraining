@@ -1,4 +1,4 @@
-﻿using FreeCources.Shared.Dtos;
+﻿using FreeCourse.Shared.Dtos;
 using FreeCourses.Services.Basket.Dtos;
 using System.Threading.Tasks;
 

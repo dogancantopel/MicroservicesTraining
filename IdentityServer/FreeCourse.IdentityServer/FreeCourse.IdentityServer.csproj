@@ -24,6 +24,6 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\..\Shared\FreeCources.Shared\FreeCources.Shared.csproj" />
+    <ProjectReference Include="..\..\Shared\FreeCources.Shared\FreeCourse.Shared.csproj" />
   </ItemGroup>
 </Project>

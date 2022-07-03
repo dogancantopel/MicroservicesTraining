@@ -1,5 +1,5 @@
-﻿using FreeCources.Shared.ControllerBase;
-using FreeCources.Shared.Services;
+﻿using FreeCourse.Shared.ControllerBase;
+using FreeCourse.Shared.Services;
 using FreeCourses.Services.Basket.Dtos;
 using FreeCourses.Services.Basket.Services;
 using Microsoft.AspNetCore.Http;

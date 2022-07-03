@@ -1,4 +1,4 @@
-﻿using FreeCources.Shared.Dtos;
+﻿using FreeCourse.Shared.Dtos;
 using FreeCourse.Services.Catalog.Dtos;
 using FreeCourse.Services.Catalog.Models;
 using System;

@@ -1,4 +1,4 @@
-﻿using FreeCources.Shared.ControllerBase;
+﻿using FreeCourse.Shared.ControllerBase;
 using FreeCourse.Services.Catalog.Dtos;
 using FreeCourse.Services.Catalog.Services;
 using Microsoft.AspNetCore.Http;

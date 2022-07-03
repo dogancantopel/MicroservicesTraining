@@ -1,7 +1,9 @@
 Services
 -catalogAPI=>http://localhost:5011
--photoStockAAP =>http://localhost:5012
+-photoStockAPI =>http://localhost:5012
 -basketAPI => http://localhost:5013
 -discountAPI => http://localhost:5014
+-orderAPI => http://localhost:5015
+-fakePaymentAPI => http://localhost:5016
 
 -Identity=> http://localhost:5001

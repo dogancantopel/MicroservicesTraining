@@ -1,9 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
-using FreeCources.Shared.Dtos;
+using FreeCourse.Shared.Dtos;
 using Microsoft.AspNetCore.Mvc;
-namespace FreeCources.Shared.ControllerBase
+namespace FreeCourse.Shared.ControllerBase
 {
     public class CustomBaseApiController :Controller
     {

@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace FreeCources.Shared.Services
+namespace FreeCourse.Shared.Services
 {
     public interface ISharedIdentityService
     {

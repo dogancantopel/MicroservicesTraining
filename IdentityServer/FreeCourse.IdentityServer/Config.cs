@@ -17,6 +17,9 @@ namespace FreeCourse.IdentityServer
              new ApiResource("resource_photoStock"){Scopes={ "photoStockAPI_FullPermission" } },
              new ApiResource("resource_basket"){Scopes={ "basketAPI_FullPermission" } },
              new ApiResource("resource_discount"){Scopes={ "discountAPI_FullPermission" } },
+             new ApiResource("resource_order"){Scopes={ "orderAPI_FullPermission" } },
+             new ApiResource("resource_payment"){Scopes={ "paymentAPI_FullPermission" } },
+             new ApiResource("resource_gateway"){Scopes={ "gateway_FullPermission" } },
              new ApiResource(IdentityServerConstants.LocalApi.ScopeName)
         };
 
@@ -37,8 +40,11 @@ namespace FreeCourse.IdentityServer
             {
                 new ApiScope("catalogAPI_FullPermission","Full Permission For Catalog API"),
                 new ApiScope("photoStockAPI_FullPermission","Full Permission For Photo Stock API"),
-                 new ApiScope("basketAPI_FullPermission","Full Permission For Basket API"),
-                  new ApiScope("discountAPI_FullPermission","Full Permission For Discount API"),
+                new ApiScope("basketAPI_FullPermission","Full Permission For Basket API"),
+                new ApiScope("discountAPI_FullPermission","Full Permission For Discount API"),
+                new ApiScope("orderAPI_FullPermission","Full Permission For Discount API"),
+                new ApiScope("paymentAPI_FullPermission","Full Permission For Payment API"),
+                new ApiScope("gateway_FullPermission","Full Permission Gateway"),
                 new ApiScope(IdentityServerConstants.LocalApi.ScopeName)
             };
 
@@ -55,6 +61,7 @@ namespace FreeCourse.IdentityServer
                     AllowedScopes={
                         "catalogAPI_FullPermission",
                         "photoStockAPI_FullPermission",
+                        "gateway_FullPermission",
                         IdentityServerConstants.LocalApi.ScopeName
                     }
                 },
@@ -76,7 +83,10 @@ namespace FreeCourse.IdentityServer
                         IdentityServerConstants.LocalApi.ScopeName,
                         "roles",
                         "basketAPI_FullPermission",
-                         "discountAPI_FullPermission"
+                        "discountAPI_FullPermission",
+                        "orderAPI_FullPermission",
+                        "paymentAPI_FullPermission",
+                        "gateway_FullPermission"
                     },
                     AccessTokenLifetime=1*60*60,//1 saat accesstoken
                     RefreshTokenExpiration=TokenExpiration.Absolute,//refresh token kalıcı değil
