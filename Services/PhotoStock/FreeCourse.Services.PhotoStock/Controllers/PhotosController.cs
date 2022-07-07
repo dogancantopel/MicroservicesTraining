@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 
 namespace FreeCourse.Services.PhotoStock.Controllers
 {
-    [Route("api/[controller]/[action]")]
+    [Route("api/[controller]")]
     [ApiController]
     public class PhotosController : CustomBaseApiController
     {
@@ -21,17 +21,20 @@ namespace FreeCourse.Services.PhotoStock.Controllers
 
             var path = Path.Combine(Directory.GetCurrentDirectory(), "wwwroot/photos", photo.FileName);
 
-            using var stream = new FileStream(path, FileMode.Create);
-            await photo.CopyToAsync(stream, cancellationToken);
+            using (var stream = new FileStream(path, FileMode.Create))
+            {
+                await photo.CopyToAsync(stream, cancellationToken);
+            }
+                
 
-            var returnPath = "photos/" + photo.FileName;
+            var returnPath =  photo.FileName;
 
             PhotoDto photoDto = new() { Url = returnPath };
 
             return CreateActionResult(Response<PhotoDto>.Success(photoDto, 200));
         }
 
-        [HttpPost]
+        [HttpDelete]
         public async Task<IActionResult> PhotoDelete(string photoUrl)
         {
 
