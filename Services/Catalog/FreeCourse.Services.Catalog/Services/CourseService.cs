@@ -48,6 +48,8 @@ namespace FreeCourse.Services.Catalog.Services
             if (course == null)
                 return Response<CourseDto>.Fail("Category Not Found", 404);
 
+            course.Category = await _categoryCollection.Find<Category>(m => m.Id == course.CategoryId).FirstAsync();
+
             return Response<CourseDto>.Success(_mapper.Map<CourseDto>(course), 200);
         }
         public async Task<Response<List<CourseDto>>> GetByUserIdAsync(string userId)

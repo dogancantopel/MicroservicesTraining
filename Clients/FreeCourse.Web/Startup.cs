@@ -1,9 +1,12 @@
+using FluentValidation.AspNetCore;
 using FreeCourse.Shared.Services;
+using FreeCourse.Web.Extensions;
 using FreeCourse.Web.Handlers;
 using FreeCourse.Web.Helper;
 using FreeCourse.Web.Models;
 using FreeCourse.Web.Services;
 using FreeCourse.Web.Services.Interfaces;
+using FreeCourse.Web.Validators;
 using Microsoft.AspNetCore.Authentication.Cookies;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
@@ -34,38 +37,14 @@ namespace FreeCourse.Web
             services.Configure<ServiceApiSettings>(Configuration.GetSection("ServiceApiSettings"));
             services.AddHttpContextAccessor();
 
-            var serviceApiSettings = Configuration.GetSection("ServiceApiSettings").Get<ServiceApiSettings>();
+
             services.AddScoped<ResourceOwnerPasswordTokenHandler>();
             services.AddScoped<ClientCredentialTokenHandler>();
             services.AddAccessTokenManagement();
             services.AddScoped<ISharedIdentityService, SharedIdentityService>();
             services.AddScoped<PhotoHelper>();
 
-            #region HttpClient
-
-            services.AddHttpClient<IIdentityService, IdentityService>();
-
-            services.AddHttpClient<IUserService, UserService>(opts =>
-            {
-                opts.BaseAddress = new Uri(serviceApiSettings.IdentityBaseUri);
-            }).AddHttpMessageHandler<ResourceOwnerPasswordTokenHandler>();
-
-            services.AddHttpClient<ICatalogService, CatalogService>(opts =>
-            {
-                opts.BaseAddress = new Uri($"{serviceApiSettings.GatewayBaseUri}/{serviceApiSettings.Catalog.Path}");
-                
-            }).AddHttpMessageHandler<ClientCredentialTokenHandler>();
-
-            services.AddHttpClient<IPhotoStockService, PhotoStockService>(opts =>
-            {
-                opts.BaseAddress = new Uri($"{serviceApiSettings.GatewayBaseUri}/{serviceApiSettings.PhotoStock.Path}");
-
-            }).AddHttpMessageHandler<ClientCredentialTokenHandler>();
-
-
-            services.AddHttpClient<IClientCredentialTokenService, ClientCredentialTokenService>();
-
-            #endregion
+            services.AddHttpClientServices(Configuration);
 
             services.AddAuthentication(CookieAuthenticationDefaults.AuthenticationScheme).AddCookie(CookieAuthenticationDefaults.AuthenticationScheme, opts =>
             {
@@ -76,7 +55,9 @@ namespace FreeCourse.Web
 
             });
 
-            services.AddControllersWithViews();
+            services.AddControllersWithViews().AddFluentValidation(m=>m.RegisterValidatorsFromAssemblyContaining<CourseCreateInputValidator>());
+
+            
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

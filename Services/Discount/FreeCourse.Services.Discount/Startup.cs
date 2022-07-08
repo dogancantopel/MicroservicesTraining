@@ -15,6 +15,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using System.IdentityModel.Tokens.Jwt;
 
 namespace FreeCourse.Services.Discount
 {
@@ -32,6 +33,7 @@ namespace FreeCourse.Services.Discount
         {
             services.AddScoped<ISharedIdentityService, SharedIdentityService>();
             services.AddScoped<IDiscountService, DiscountService>();
+            JwtSecurityTokenHandler.DefaultInboundClaimTypeMap.Remove("sub");
 
             services.AddHttpContextAccessor();
             var requireAuthorizePolicy = new AuthorizationPolicyBuilder().RequireAuthenticatedUser().Build();
